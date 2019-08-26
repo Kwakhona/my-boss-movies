@@ -3,7 +3,7 @@ import { MovieItem, MovieImgDiv, MovieImg, MovieContent, MovieHeader, MovieSynop
 
 import './movie.scss';
 
-const Movie = ({title, synopsis, imageUrl, releaseDate, sortBy, index}) => {
+const Movie = ({title, synopsis, imageUrl, index}) => {
 
   return (
     <MovieItem>

@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.css';
 
+import App from 'components/App';
 import GlobalStyles from 'styles/globals';
 import configureStore from 'store';
-import App from 'components/App';
 import * as registerServiceWorker from './serviceWorker';
 
 const renderApp = () => {
-    const store = configureStore({});
+    const store = configureStore();
     ReactDOM.render(
         <Provider store={store}>
             <GlobalStyles/>

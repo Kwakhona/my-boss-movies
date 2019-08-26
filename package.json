@@ -18,7 +18,7 @@
   "scripts": {
     "start": "NODE_PATH=src react-scripts start",
     "build": "react-scripts build",
-    "test": "NODE_PATH=src  react-scripts test",
+    "test": "NODE_PATH=src  jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -35,5 +35,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "react-test-renderer": "^16.9.0",
+    "redux-devtools-extension": "^2.13.8"
   }
 }
