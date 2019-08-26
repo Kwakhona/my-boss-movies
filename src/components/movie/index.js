@@ -14,7 +14,8 @@ const Movie = ({title, synopsis, imageUrl, releaseDate, sortBy, index}) => {
       <MovieContent>
           <MovieHeader>
             <Index>{index}. </Index>
-          {title}</MovieHeader>
+            {title}
+          </MovieHeader>
           <MovieSynopsis>{synopsis}</MovieSynopsis>
       </MovieContent>
   </MovieItem>

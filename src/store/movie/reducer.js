@@ -8,7 +8,7 @@ const getInitialState = () => ({
     error: ''
 });
 
-const movieReducer = (state = getInitialState(), { type, payload}) => {
+const movieReducer = (state = getInitialState(), { type, payload }) => {
     switch (type) {
         case actionTypes.FETCH_MOVIES_REQUEST:
             return {
@@ -23,17 +23,19 @@ const movieReducer = (state = getInitialState(), { type, payload}) => {
                 movies: payload['components'][1]['items'],
                 loading: false
             };
-        case actionTypes.SELECT_SORT_BY:
-            return {
-                ...state,
-                sortBy: payload['components'][0]['items'][0]['valueToOrderBy']
-            }
         case actionTypes.FETCH_MOVIES_FAILURE:
             return {
                 ...state,
                 ...payload
             };
-
+        case actionTypes.SELECT_SORT_BY:
+            const sortBy = payload.components ? payload['components'][0]['items'][0]['valueToOrderBy'] : payload.sortBy;
+            const movies =  state.movies.sort((a, b) => a[sortBy] - b[sortBy]);
+            return {
+                ...state,
+                sortBy: sortBy,
+                movies: movies
+            };
         default:
             return state;
     }

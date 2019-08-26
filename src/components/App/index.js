@@ -7,10 +7,11 @@ const mapStateToProps = state => ({
   movies: state.movie.movies,
   sortBy: state.movie.sortBy,
   sortBys: state.movie.sortBys,
-  loading: state.movie.loading
+  loading: state.movie.loading,
 });
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, state) => ({
   fetchMovies: () => dispatch(actions.fetchMovies()),
+  sort : (type) =>  dispatch(actions.sort(type))
 });
 
 export default connect(

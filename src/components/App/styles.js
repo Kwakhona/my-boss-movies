@@ -5,7 +5,7 @@ export const Container = styled.div.attrs({
 })`
 `;
 export const Header = styled.div`
-    // display: inline-flex
+    display: inline-flex
 `;
 export const Title = styled.h1`
     color: ${({theme}) => theme.text};
@@ -13,17 +13,36 @@ export const Title = styled.h1`
     font-weight: 600;
     margin-top: 24px;
     margin-bottom: 26px;
-    width: 96vw;
+    width: 83vw;
 `;
 export const Line = styled.hr`
     color: #EEE;
     backgroundColor: #EEE;
     border-bottom: 1px solid #EEE;
 `;
+
+export const SortByToolBar = styled.div.attrs({
+    className: 'btn-toolbar'
+})`
+`;
+export const SortByGroup = styled.div.attrs({
+    className: 'btn-group btn-group-sm float-right'
+})`
+    width: 232px;
+`;
+
 export const SortbyTitle = styled.h1`
     color: ${({theme}) => theme.textSecondary};
     font-size: 20px;
     font-weight: 600;
     margin-top: 24px;
     margin-bottom: 26px;
+`;
+export const SortByBtn = styled.button.attrs({
+    className: 'btn btn-secondary'
+})`
+    width: 70px;
+    &:not(:last-child){
+        border-right: 2px solid #fff;
+    }
 `;

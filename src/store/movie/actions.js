@@ -9,11 +9,11 @@ export const actionTypes = {
 const action = (type, payload) => ({type, payload});
 
 const actions = {
-     fetchMovies: (payload = {}) => {
-         return dispatch => {
-             dispatch(action(actionTypes.FETCH_MOVIES_REQUEST, payload));
+    fetchMovies: (payload = {}) => {
+        return dispatch => {
+            dispatch(action(actionTypes.FETCH_MOVIES_REQUEST, payload));
 
-             return moviesApi
+            return moviesApi
                 .fetchMovies()
                 .then(data => {
                     dispatch(action(actionTypes.FETCH_MOVIES_SUCCESS,  data));
@@ -22,7 +22,12 @@ const actions = {
                 .catch(
                     error => dispatch(action(actionTypes.FETCH_MOVIES_FAILURE, error))
                 );
-         };
+         }
+    },
+    sort: ({type}) => {
+        return  dispatch => {
+            dispatch( action(actionTypes.SELECT_SORT_BY, { sortBy: type}));
+        }
     }
 }
 export default actions;
