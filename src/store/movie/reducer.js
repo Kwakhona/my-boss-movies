@@ -36,6 +36,11 @@ const movieReducer = (state = getInitialState(), { type, payload }) => {
                 sortBy: sortBy,
                 movies: movies
             };
+        case actionTypes.SET_STORE_LOCAL_STORAGE:
+            return {
+                ...state,
+                ...payload
+            };
         default:
             return state;
     }

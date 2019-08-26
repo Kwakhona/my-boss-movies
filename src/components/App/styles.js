@@ -29,6 +29,8 @@ export const SortByGroup = styled.div.attrs({
     className: 'btn-group btn-group-sm float-right'
 })`
     width: 232px;
+    height: 45px;
+    margin-top: 11px;
 `;
 
 export const SortbyTitle = styled.h1`
@@ -42,7 +44,4 @@ export const SortByBtn = styled.button.attrs({
     className: 'btn btn-secondary'
 })`
     width: 70px;
-    &:not(:last-child){
-        border-right: 2px solid #fff;
-    }
 `;

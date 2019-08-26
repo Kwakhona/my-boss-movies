@@ -7,7 +7,6 @@ import { Container, Header, Title, Line, SortByToolBar, SortByGroup, SortByBtn }
 class App extends Component {
     constructor(props) {
         super(props);
-        // Don't call this.setState() here!
         this.handleClick = this.handleClick.bind(this);
     }
     componentDidMount() {
@@ -28,7 +27,7 @@ class App extends Component {
                             <SortByGroup >
                                 {
                                     sortBys.map((sortBy, i) => (
-                                        <SortByBtn key={i}  onClick={
+                                        <SortByBtn key={i} className={sortBy.valueToOrderBy === this.props.sortBy ? 'active': '' }  onClick={
                                             () => this.handleClick(sortBy.valueToOrderBy)
                                         }>
                                             {sortBy.label}
