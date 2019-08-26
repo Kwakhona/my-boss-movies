@@ -2,7 +2,7 @@ export const colorsDark = {
     background: '#272727',
     backgroundSecondary: '#393C3E',
     text: '#bfbebe',
-    textSecondary: '#fff',
+    textSecondary: '#848886',
     border: '#272727'
 };
 export const colorsLight = {

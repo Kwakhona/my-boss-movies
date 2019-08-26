@@ -1,23 +1,23 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import { CardBody, Card, CardImage, CardText, CardTitle, CardFooter, CardTextMuted } from './styles';
+import { MovieItem, MovieImgDiv, MovieImg, MovieContent, MovieHeader, MovieSynopsis, CheckBox, Index } from './styles';
 
+import './movie.scss';
 
-const Movie = ({title, synopsis, imageUrl, releaseDate}) => {
+const Movie = ({title, synopsis, imageUrl, releaseDate, sortBy, index}) => {
 
   return (
-    <Card>
-      <CardImage src={imageUrl} />
-      <CardBody>
-            <CardTitle>{title}</CardTitle>
-            <CardText>
-              {synopsis}
-            </CardText>
-          </CardBody>
-          <CardFooter>
-            <strong>Release: </strong><CardTextMuted>{releaseDate}</CardTextMuted>
-          </CardFooter>
-        </Card>
+    <MovieItem>
+      <CheckBox type="checkbox"/>
+      <MovieImgDiv>
+          <MovieImg src={imageUrl} />
+      </MovieImgDiv>
+      <MovieContent>
+          <MovieHeader>
+            <Index>{index}. </Index>
+          {title}</MovieHeader>
+          <MovieSynopsis>{synopsis}</MovieSynopsis>
+      </MovieContent>
+  </MovieItem>
   );
 }
 Movie.propTypes = {

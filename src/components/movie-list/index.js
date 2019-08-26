@@ -1,16 +1,19 @@
 import React from 'react';
-import { MovieWrapper, CardGroup } from './styles';
+import { MovieWrapper, MovieListWrapper } from './styles';
 import Movie from 'components/movie';
 
-const MovieList = ({movies}) => (
+const MovieList = ({movies, sortBy}) => (
 
   <MovieWrapper>
     <div className="col-md">
-      <CardGroup>
+      <MovieListWrapper>
         {
-          movies.map(movie => (<Movie key={movie.id} {...movie}/>))
+          movies.map((movie, i) => (
+              <Movie key={movie.id} index={i+1} sortBy={sortBy} {...movie}/>
+            )
+          )
         }
-      </CardGroup>
+      </MovieListWrapper>
     </div>
   </MovieWrapper>
 )

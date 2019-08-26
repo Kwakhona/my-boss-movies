@@ -1,44 +1,48 @@
 import styled  from 'styled-components';
 
-export const MovieItem = styled.li.attrs({
-    className: 'movie-item'
-})`
+export const MovieItem = styled.li`
     display: flex;
     padding: 10px 5px;
-    cursor: pointer;
     &:not(:last-child){
         border-bottom: 1px solid #EEE;
     }
 `;
-export const CheckBox = styled.input.attrs({
-    className: 'checkbox'
-})``;
 export const MovieImgDiv = styled.div`
     flex-shrink: 0;
     height: 80px;
 `;
+export const CheckBox = styled.input`
+    position: absolute;
+    left: -9999px;
+`;
 export const MovieImg = styled.img.attrs({alt: 'Thumbnail'})`
     border-radius: 50%;
-    width: 65px;
-    height: 65px;
+    width: 95px;
+    height: 95px;
 `;
 export const MovieContent = styled.div`
     flex-grow: 1;
     padding: 0 20px;
 `;
 export const MovieHeader = styled.h4`
-    color: ${({theme}) => theme.text};
     margin: 0;
     font-size: 18px;
-    // margin-top: 15px;
-    margin-top: 19px;
+    margin-top: 15px;
+    color: ${({theme}) => theme.text};
 `;
 export const MovieSynopsis = styled.p`
     margin-top: 5px;
     color: ${({theme}) =>  theme.textSecondary};
     margin-bottom: 0;
-    visibility: hidden;
-    height: 0
+    display: no
 `;
-export const Index = styled.span`
+export const MovieAction = styled.div`
+    flex-grow: 3;
+    padding: 0 20px;
+    margin-top: 20px;
+`;
+export const MovieActionBtn = styled.button.attrs({
+    className: 'btn btn-secondary btn-lg btn-block'
+})`
+
 `;

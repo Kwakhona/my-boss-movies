@@ -4,7 +4,9 @@ export const MovieWrapper = styled.div.attrs({className: 'row'})`
    background-color: ${({theme}) => theme.backgroundSecondary};
 `;
 
-export const CardGroup = styled.div.attrs({
-   className: 'card-group'
-})`
+export const MovieListWrapper = styled.div`
+   background-color: ${({theme}) => theme.backgroundSecondary};
+   margin: 0;
+   padding: 15px;
+   border-radius: 2px;
 `;
