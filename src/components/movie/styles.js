@@ -10,19 +10,19 @@ export const MovieItem = styled.li.attrs({
         border-bottom: 1px solid #EEE;
     }
 `;
-export const CheckBox = styled.input.attrs({
-    className: 'checkbox'
-})``;
 export const MovieImgDiv = styled.div`
     flex-shrink: 0;
     height: 80px;
 `;
-export const MovieImg = styled.img.attrs({alt: 'Thumbnail'})`
+export const MovieImg = styled.img.attrs({
+    id: 'movieUrl',
+    alt: 'Thumbnail'
+})`
     border-radius: 50%;
     width: 65px;
     height: 65px;
 `;
-export const MovieContent = styled.div`
+export const MovieContent = styled.div.attrs({id: 'content'})`
     flex-grow: 1;
     padding: 0 20px;
 `;
@@ -33,7 +33,7 @@ export const MovieHeader = styled.h4`
     // margin-top: 15px;
     margin-top: 19px;
 `;
-export const MovieSynopsis = styled.p`
+export const MovieSynopsis = styled.p.attrs({id: 'synopsis'})`
     margin-top: 5px;
     color: ${({theme}) =>  theme.textSecondary};
     margin-bottom: 0;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { MovieItem, MovieImgDiv, MovieImg, MovieContent, MovieHeader, MovieSynopsis, CheckBox, Index } from './styles';
+import { MovieItem, MovieImgDiv, MovieImg, MovieContent, MovieHeader, MovieSynopsis, Index } from './styles';
 
 import './movie.scss';
 
@@ -7,7 +7,6 @@ const Movie = ({title, synopsis, imageUrl, index}) => {
 
   return (
     <MovieItem>
-      <CheckBox type="checkbox"/>
       <MovieImgDiv>
           <MovieImg src={imageUrl} />
       </MovieImgDiv>

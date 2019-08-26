@@ -1,7 +1,7 @@
 
 import rootReducer from '../reducer';
 
-describe('Movie Store', () => {
+describe('Reducers: Movie', () => {
     test('should handle FETCH_MOVIES_REQUEST', () => {
         let state;
         state = rootReducer({app:{theme:'dark'},movie:{sortBys:[],sortBy:'',movies:[],loading:false,error:''}}, {type:'FETCH_MOVIES_REQUEST',payload:{}});

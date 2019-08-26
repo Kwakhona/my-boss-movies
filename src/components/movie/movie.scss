@@ -3,28 +3,3 @@
         background: #393C3E;
     }
 }
-
-.checkbox {
-    position: absolute;
-    left: -9999px;
-
-    & div > h1 > & ~ span {
-        // opacity: 1;
-        display: none;
-        // height: auto;
-    }
-}
-
-.checkbox {
-    &:checked {
-        & div > h1 > & ~ span  {
-            // transition: opacity 1s ease-out;
-            // opacity: 0;
-            // height: 0;
-            // overflow: hidden;
-            display: block;
-            animation: fade-in 1s;
-        }
-    }
-
-}
