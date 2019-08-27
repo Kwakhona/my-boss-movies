@@ -1,0 +1,35 @@
+@-webkit-keyframes fadeIn {
+    from { height: 0; }
+    to { height: 100%; }
+}
+
+@keyframes fadeIn {
+    from { height: 0; }
+    to { height: 100%; }
+}
+
+@keyframes showMe {
+    from { display: none };
+    to { display: flex };
+}
+@keyframes hideMe {
+    from { display: flex };
+    to { display: none };
+}
+
+ #synopsis {
+      -webkit-animation: fadeIn 5s ease-in-out forwards;
+      animation: fadeIn 5s ease-in-out forwards;
+      display: flex;
+      height: 100%;
+}
+#releaseDate {
+    -webkit-animation: showMe 5s ease-in-out forwards;
+    animation: hideMe 5s ease-in-out forwards;
+    display: flex;
+}
+
+.group {
+    height: 37px;
+    margin-top: 32px;
+}
