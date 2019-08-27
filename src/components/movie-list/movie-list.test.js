@@ -35,10 +35,14 @@ describe('Component: MovieList', () => {
         });
 
         expect(container.querySelector('#movieUrl').src).toEqual(props.movies[0].imageUrl);
-        expect(container.querySelector('h4').textContent).toEqual(`${props.movies.length}. ${props.movies[0].title}`);
-        expect(container.querySelector('#synopsis').textContent).toEqual(props.movies[0].synopsis);
-        expect(container.querySelector('span').textContent).toEqual(`${props.movies.length}. `);
+        expect(container.querySelector('h4').textContent).toEqual(`${props.movies[0].title}`);
         expect(container.querySelector('li').children.length).toBe(2)
 
+        // const content = container.querySelector('.content');
+        // act(() => {
+        //     content.dispatchEvent(new MouseEvent('click', {bubbles: true}));
+        // });
+        // expect(container.querySelector('#synopsis').textContent).toEqual(props.movies[0].synopsis);
+        // expect(container.querySelector('span').textContent).toEqual(`${props.movies.length}. `);
     })
 });

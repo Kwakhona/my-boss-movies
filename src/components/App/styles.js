@@ -40,8 +40,3 @@ export const SortbyTitle = styled.h1`
     margin-top: 24px;
     margin-bottom: 26px;
 `;
-export const SortByBtn = styled.button.attrs({
-    className: 'btn btn-secondary'
-})`
-    width: 70px;
-`;

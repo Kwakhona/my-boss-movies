@@ -23,10 +23,15 @@ describe('Component: Movie', () => {
         act(() => {
             render(<Movie {...props} />, container);
         });
-
         expect(container.querySelector('#movieUrl').src).toEqual(props.imageUrl);
-        expect(container.querySelector('h4').textContent).toEqual(`${props.index}. ${props.title}`);
-        expect(container.querySelector('#synopsis').textContent).toEqual(props.synopsis);
-        expect(container.querySelector('span').textContent).toEqual(`${props.index}. `);
+        expect(container.querySelector('h4').textContent).toEqual(`${props.title}`);
+
+        // const content = container.querySelector('.content');
+        // act(() => {
+        //     content.dispatchEvent(new MouseEvent('click', {bubbles: true}));
+        // });
+        // expect(container.querySelector('#synopsis').textContent).toEqual(props.synopsis);
+        // expect(container.querySelector('span').textContent).toEqual(`${props.index}. `);
+
     })
 });

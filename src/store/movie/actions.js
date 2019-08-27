@@ -7,8 +7,9 @@ export const actionTypes = {
     FETCH_MOVIES_SUCCESS: 'FETCH_MOVIES_SUCCESS',
     FETCH_MOVIES_FAILURE: 'FETCH_MOVIES_FAILURE',
     SET_STORE_LOCAL_STORAGE: 'SET_STORE_LOCAL_STORAGE',
-    GSET_STORE_LOCAL_STORAGE: 'GSET_STORE_LOCAL_STORAGE',
+    GET_STORE_LOCAL_STORAGE: 'GET_STORE_LOCAL_STORAGE',
     SELECT_SORT_BY: 'SELECT_SORT_BY',
+    TOGGLE_MOVIE: 'TOGGLE_MOVIE'
 };
 const action = (type, payload) => ({type, payload});
 
@@ -41,14 +42,19 @@ const actions = {
             dispatch(action(actionTypes.SELECT_SORT_BY, { sortBy: type}));
         }
     },
+    toggleMovie: ({index}) => {
+        return dispatch => {
+            dispatch(action(actionTypes.TOGGLE_MOVIE, {index: index}));
+        }
+    },
     setLocalStorageState: (state) => {
         return dispatch => {
-            dispatch(actionTypes.GSET_STORE_LOCAL_STORAGE, state);
+            dispatch(actionTypes.SET_STORE_LOCAL_STORAGE, state);
         }
     },
     getLocalStorageState: () => {
         return dispatch => {
-            dispatch(actionTypes.GSET_STORE_LOCAL_STORAGE, {});
+            dispatch(actionTypes.GET_STORE_LOCAL_STORAGE, {});
         }
     }
 }

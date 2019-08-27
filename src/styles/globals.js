@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
     * {
@@ -24,3 +25,7 @@ const GlobalStyles = createGlobalStyle`
         }
     }`;
 export default GlobalStyles;
+
+export const SortByBtn = styled.button`
+    width: 70px;
+`;

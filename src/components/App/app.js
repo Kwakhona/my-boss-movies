@@ -2,18 +2,26 @@ import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
 import MovieList from 'components/movie-list';
 import { colorsLight } from 'styles/pallete';
-import { Container, Header, Title, Line, SortByToolBar, SortByGroup, SortByBtn } from './styles';
+import { Container, Header, Title, Line, SortByToolBar, SortByGroup } from './styles';
+import { SortByBtn } from 'styles/globals';
 
 class App extends Component {
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
+        this.sortMovies = this.sortMovies.bind(this);
+        this.toggleMovie = this.toggleMovie.bind(this);
     }
     componentDidMount() {
         this.props.fetchMovies();
     }
-    handleClick(type) {;
+    sortMovies(type) {
         this.props.sort({type});
+    }
+    toggleMovie(index) {
+        if(index && index !== null) {
+            this.props.toggleMovie(index);
+            this.forceUpdate();
+        }
     }
     render() {
         const { movies, sortBys, sortBy } = this.props;
@@ -24,12 +32,17 @@ class App extends Component {
                         <Title>Boss Man's 80s Movies</Title>
                         <Line />
                         <SortByToolBar>
-                            <SortByGroup >
+                            <SortByGroup>
                                 {
                                     sortBys.map((sortBy, i) => (
-                                        <SortByBtn key={i} className={sortBy.valueToOrderBy === this.props.sortBy ? 'active': '' }  onClick={
-                                            () => this.handleClick(sortBy.valueToOrderBy)
-                                        }>
+                                        <SortByBtn key={i}
+                                            className={
+                                                sortBy.valueToOrderBy === this.props.sortBy ?
+                                                'btn btn-secondary active': 'btn btn-secondary'
+                                            }
+                                             onClick={
+                                                 () => this.sortMovies(sortBy.valueToOrderBy)
+                                            }>
                                             {sortBy.label}
                                         </SortByBtn>
                                         )
@@ -38,7 +51,7 @@ class App extends Component {
                             </SortByGroup>
                         </SortByToolBar>
                     </Header>
-                    <MovieList movies={movies} sortBy={sortBy}/>
+                    <MovieList movies={movies} sortBy={sortBy} toggleMovie={this.toggleMovie} />
                 </Container>
             </ThemeProvider>
         );

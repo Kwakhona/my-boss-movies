@@ -5,14 +5,22 @@ export const MovieItem = styled.li.attrs({
 })`
     display: flex;
     padding: 10px 5px;
-    cursor: pointer;
+
     &:not(:last-child){
         border-bottom: 1px solid #EEE;
+    }
+    &:last-child{
+        border-bottom: 1px solid #EEE;
+    }
+
+    &:first-child {
+        border-top: 1px solid #EEE;
     }
 `;
 export const MovieImgDiv = styled.div`
     flex-shrink: 0;
     height: 80px;
+    cursor: pointer;
 `;
 export const MovieImg = styled.img.attrs({
     id: 'movieUrl',
@@ -30,15 +38,20 @@ export const MovieHeader = styled.h4`
     color: ${({theme}) => theme.text};
     margin: 0;
     font-size: 18px;
-    // margin-top: 15px;
     margin-top: 19px;
+`;
+export const MovieRelease = styled.h3`
+    color: ${({theme}) => theme.text};
+    margin: 0;
+    font-size: 16px;
+    margin-top: 5px;
+    display: none;
 `;
 export const MovieSynopsis = styled.p.attrs({id: 'synopsis'})`
     margin-top: 5px;
     color: ${({theme}) =>  theme.textSecondary};
     margin-bottom: 0;
-    visibility: hidden;
-    height: 0
+    display: none;
 `;
 export const Index = styled.span`
 `;
